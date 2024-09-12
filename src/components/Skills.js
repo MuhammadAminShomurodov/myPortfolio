@@ -1,5 +1,5 @@
-import React from "react";
-import "react-multi-carousel/lib/styles.css"; // Ensure this package is installed
+import React, { useEffect, useRef } from "react";
+import "react-multi-carousel/lib/styles.css";
 import colorSharp from "../assets/img/color-sharp.png";
 import "../components/Skills.css";
 
@@ -20,39 +20,51 @@ import nodejsIcon from "../assets/img/nodejsIcon.svg";
 import figmaIcon from "../assets/img/figmaIcon.svg";
 
 export const Skills = () => {
-  // Responsive settings for the carousel
-  const responsive = {
-    superLargeDesktop: {
-      breakpoint: { max: 4000, min: 3000 },
-      items: 5,
-    },
-    desktop: {
-      breakpoint: { max: 3000, min: 1024 },
-      items: 3,
-    },
-    tablet: {
-      breakpoint: { max: 1024, min: 464 },
-      items: 2,
-    },
-    mobile: {
-      breakpoint: { max: 464, min: 0 },
-      items: 1,
-    },
-  };
+  const iconsRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+          } else {
+            entry.target.classList.remove("visible");
+          }
+        });
+      },
+      { threshold: 0.1 }
+    ); // Adjust the threshold as needed
+
+    // Observe the skills icons
+    if (iconsRef.current) {
+      const icons = iconsRef.current.querySelectorAll(".skills-icon");
+      icons.forEach((icon) => observer.observe(icon));
+    }
+
+    // Cleanup observer on component unmount
+    return () => {
+      if (iconsRef.current) {
+        const icons = iconsRef.current.querySelectorAll(".skills-icon");
+        icons.forEach((icon) => observer.unobserve(icon));
+      }
+    };
+  }, []);
 
   return (
     <section className="skills-section" id="skills">
       <div className="skills-container">
         <div className="skills-row">
           <div className="skills-col-12">
-            <div className="skills-box wow zoomIn">
+            <div className="skills-box">
               <h2>Skills</h2>
               <p>
                 HTML, CSS, JavaScript, Git, Vite, React, Redux, Zustand, Axios,
-                TypeScript, Bootstrap,<br></br> TailwindCSS, MUI, Ant, Shadcn,
-                Bash, Next.js, Node.js, Figma
+                TypeScript, Bootstrap,
+                <br /> TailwindCSS, MUI, Ant, Shadcn, Bash, Next.js, Node.js,
+                Figma
               </p>
-              <div className="skills-icons">
+              <div className="skills-icons" ref={iconsRef}>
                 <div className="skills-icon">
                   <img src={htmlIcon} alt="HTML" />
                 </div>

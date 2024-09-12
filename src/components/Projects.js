@@ -1,8 +1,9 @@
 import { Container, Row, Col, Tab, Nav } from "react-bootstrap";
 import { ProjectCard } from "./ProjectCard";
-import projImg1 from "../assets/img/project-img1.png";
-import projImg2 from "../assets/img/project-img2.png";
-import projImg3 from "../assets/img/project-img3.png";
+import projImg1 from "../assets/img/alifshop.png";  // AlifShop rasm URL'si
+import projImg2 from "../assets/img/last-exam.png";  // Last Exam rasm URL'si
+import projImg3 from "../assets/img/8-month-8-lesson.png";  // 8-Month 8-Lesson rasm URL'si
+import projImg4 from "../assets/img/exam5.png";  // Exam5 rasm URL'si
 import colorSharp2 from "../assets/img/color-sharp2.png";
 import 'animate.css';
 import TrackVisibility from 'react-on-screen';
@@ -11,35 +12,29 @@ export const Projects = () => {
 
   const projects = [
     {
-      title: "Business Startup",
-      description: "Design & Development",
+      title: "AlifShop",
+      description: "E-commerce platform for AlifShop",
       imgUrl: projImg1,
+      url: "https://github.com/MuhammadAminShomurodov/AlifShop"
     },
     {
-      title: "Business Startup",
-      description: "Design & Development",
+      title: "Last Exam",
+      description: "A project for managing exam schedules and results",
       imgUrl: projImg2,
+      url: "https://github.com/MuhammadAminShomurodov/Last-exam"
     },
     {
-      title: "Business Startup",
-      description: "Design & Development",
+      title: "8-Month 8-Lesson",
+      description: "A learning management system for a course",
       imgUrl: projImg3,
+      url: "https://github.com/MuhammadAminShomurodov/8-month-8-lesson"
     },
     {
-      title: "Business Startup",
-      description: "Design & Development",
-      imgUrl: projImg1,
-    },
-    {
-      title: "Business Startup",
-      description: "Design & Development",
-      imgUrl: projImg2,
-    },
-    {
-      title: "Business Startup",
-      description: "Design & Development",
-      imgUrl: projImg3,
-    },
+      title: "Exam5",
+      description: "An exam management system",
+      imgUrl: projImg4,
+      url: "https://github.com/MuhammadAminShomurodov/exam5.git"
+    }
   ];
 
   return (
@@ -72,18 +67,21 @@ export const Projects = () => {
                             return (
                               <ProjectCard
                                 key={index}
-                                {...project}
+                                title={project.title}
+                                description={project.description}
+                                imgUrl={project.imgUrl}
+                                url={project.url}
                                 />
                             )
                           })
                         }
                       </Row>
                     </Tab.Pane>
-                    <Tab.Pane eventKey="section">
-                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque quam, quod neque provident velit, rem explicabo excepturi id illo molestiae blanditiis, eligendi dicta officiis asperiores delectus quasi inventore debitis quo.</p>
+                    <Tab.Pane eventKey="second">
+                      <p>Currently working on new real projects. These sections will be updated soon! ;)</p>
                     </Tab.Pane>
                     <Tab.Pane eventKey="third">
-                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque quam, quod neque provident velit, rem explicabo excepturi id illo molestiae blanditiis, eligendi dicta officiis asperiores delectus quasi inventore debitis quo.</p>
+                      <p>Currently working on new real projects. These sections will be updated soon! ;)</p>
                     </Tab.Pane>
                   </Tab.Content>
                 </Tab.Container>
@@ -92,7 +90,7 @@ export const Projects = () => {
           </Col>
         </Row>
       </Container>
-      <img className="background-image-right" src={colorSharp2}></img>
+      <img className="background-image-right" src={colorSharp2} alt="background design" />
     </section>
   )
 }

@@ -1,0 +1,63 @@
+/* ProjectCard.css */
+
+/* Container for the project cards */
+.proj-imgbx {
+  position: relative;
+  border-radius: 30px !important;
+  overflow: hidden;
+  margin-bottom: 24px !important;
+}
+
+/* Overlay gradient effect for project cards */
+.proj-imgbx::before {
+  content: "";
+  background: linear-gradient(90.21deg, #aa367c -5.91%, #4a2fbd 111.58%);
+  opacity: 0.85;
+  position: absolute;
+  width: 100%;
+  height: 0;
+  transition: 0.4s ease-in-out;
+  border-radius: 30px !important;
+  margin-bottom: 24px !important;
+}
+
+/* Overlay effect on hover */
+.proj-imgbx:hover::before {
+  height: 100%;
+}
+
+/* Text overlay on the project card */
+.proj-txtx {
+  position: absolute;
+  text-align: center;
+  top: 65%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: 0.5s ease-in-out;
+  opacity: 0;
+  width: 100%;
+}
+
+/* Text visible on hover */
+.proj-imgbx:hover .proj-txtx {
+  top: 50%;
+  opacity: 1;
+}
+
+/* Title text styling in project card */
+.proj-txtx h4 {
+  font-size: 30px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  line-height: 1.1em;
+  color: #fff;
+}
+
+/* Subtitle text styling in project card */
+.proj-txtx span {
+  font-style: italic;
+  font-weight: 400;
+  font-size: 15px;
+  letter-spacing: 0.8px;
+  color: #fff;
+}
