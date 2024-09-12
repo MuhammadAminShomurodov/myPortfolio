@@ -4,6 +4,7 @@ import projImg1 from "../assets/img/alifshop.png";  // AlifShop rasm URL'si
 import projImg2 from "../assets/img/last-exam.png";  // Last Exam rasm URL'si
 import projImg3 from "../assets/img/8-month-8-lesson.png";  // 8-Month 8-Lesson rasm URL'si
 import projImg4 from "../assets/img/exam5.png";  // Exam5 rasm URL'si
+import projImg5 from "../assets/img/weather.png";  // Weather rasm URL'si (yangilangan)
 import colorSharp2 from "../assets/img/color-sharp2.png";
 import 'animate.css';
 import TrackVisibility from 'react-on-screen';
@@ -34,6 +35,12 @@ export const Projects = () => {
       description: "An exam management system",
       imgUrl: projImg4,
       url: "https://github.com/MuhammadAminShomurodov/exam5.git"
+    },
+    {
+      title: "Weather App",
+      description: "A weather application that displays current weather information",
+      imgUrl: projImg5,
+      url: "https://github.com/MuhammadAminShomurodov/Weather.git"
     }
   ];
 
