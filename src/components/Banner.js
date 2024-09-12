@@ -55,7 +55,7 @@ export const Banner = () => {
   return (
     <section className="banner" id="home">
       <Container>
-        <Row className="aligh-items-center">
+        <Row className="align-items-center">
           <Col xs={12} md={6} xl={7}>
             <TrackVisibility>
               {({ isVisible }) => (
@@ -79,15 +79,24 @@ export const Banner = () => {
                     I am an experienced Frontend Developer specializing in
                     creating interactive and user-friendly websites. I have a
                     strong grasp of technologies such as HTML, CSS, and
-                    JavaScript, TypeScript and I successfully utilize framework
+                    JavaScript, TypeScript and I successfully utilize frameworks
                     like React Js. I am keen on learning new technologies and
                     developing innovative projects. My goal is to enhance user
                     experience by delivering high-quality and efficient frontend
                     solutions.
                   </p>
-                  <button onClick={() => console.log("connect")}>
-                    Let’s Connect <ArrowRightCircle size={25} />
-                  </button>
+                  <a
+                    href="https://docs.google.com/document/d/15igMyRdIqeIUA3YelcehBWMv2n5n9vYnUxlfygfZiuE/edit?usp=sharing"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn"
+                  >
+                    My Resume{" "}
+                    <ArrowRightCircle
+                      size={25}
+                      style={{ marginLeft: "10px" }}
+                    />
+                  </a>
                 </div>
               )}
             </TrackVisibility>
